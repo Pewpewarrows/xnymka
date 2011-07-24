@@ -1,0 +1,31 @@
+{% extends 'fixed_960_width.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block main %}
+    <section id="breadcrumbs">
+        <ul>
+            {% block breadcrumbs %}{% endblock %}
+        </ul>
+    </section> <!-- end of #breadcrumbs -->
+    <div class="cf"></div>
+    {% block core %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+    <div class="cf"></div>
+{% endblock %}
+
+{% block footer %}
+    <hr/>
+    <small>
+        &copy; Copyright {% now "Y" %} Christina. All Rights Reserved.
+    </small>
+    <div class="right">
+        <small>
+            <ul id="footer-nav">
+                <li class="first"><a href="{% url frontpage %}">Home</a></li>
+            </ul>
+        </small>
+    </div>
+{% endblock %}

@@ -1,0 +1,241 @@
+/*
+ * Site-Specific CSS Changes
+ *
+ * Table of Contents:
+ *      1. Page Structure
+ *      2. Headings
+ *      3. Text Styles
+ *      4. Navigation
+ *      5. Tables
+ *      6. Forms
+ *      7. Utilities
+ *      8. Page Components
+ *      9. Section Overrides
+ *      10. Third-Party
+ *      11. Media Queries
+ */
+
+/* -----------------------------------
+  			Page Structure
+ ----------------------------------- */
+
+body {
+	background-color: #E3E3E3;
+}
+
+#wrapper {
+    width: 880px;
+    margin: 40px auto 20px;
+    padding: 20px 40px;
+	font-size: 1.3em;
+	background-color: white;
+	border: 1px solid #CACACA;
+	-o-box-shadow: #999 0 0 20px -5px;
+	-moz-box-shadow: #999 0 0 20px -5px;
+	-webkit-box-shadow: #999 0 0 20px -5px;
+	box-shadow: #999 0 0 20px -5px;
+}
+
+header {
+	position: relative;
+	height: 30px;
+}
+
+header a.logo img {
+    z-index: 30;
+    position: absolute;
+    top: 6px;
+    left: 300px;
+}
+
+footer {
+	height: 50px;
+}
+
+footer a {
+    margin: 0 5px;
+}
+
+
+/* -----------------------------------
+  			   Headings
+ ----------------------------------- */
+
+h1 a { text-decoration: none; border: 0; }
+h1 a:visited { color: inherit; }
+h1 a:hover { color: #036; }
+
+aside.widget h2 {
+    margin: 0 0 0.2em;
+    font-size: 1.3em;
+}
+
+
+/* -----------------------------------
+  			  Text Styles
+ ----------------------------------- */
+
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+a:visited { color: #607890; }
+a:hover { color: #036; }
+
+pre, code {
+    font-size: 11px;
+}
+
+
+/* -----------------------------------
+  			  Navigation
+ ----------------------------------- */
+
+nav {
+    z-index: 20;
+	position: absolute;
+	top: 30px;
+	left: 85px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav li {
+	float: left;
+}
+
+nav li.spacer-right {
+    margin-right: 300px;
+}
+
+nav li a {
+	float: left;
+	display: block;
+	width: 50px;
+	padding: 0px 9px;
+	border: 0;
+	font-size: 1.1em;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+}
+
+nav li a img {
+    width: 50px;
+    height: 50px;
+}
+
+#footer-nav {
+    list-style: none;
+    display: inline;
+}
+
+#footer-nav li {
+    display: inline;
+}
+
+#footer-nav li:before {
+    content: '| ';
+}
+
+#footer-nav li.first:before {
+    content: '';
+}
+
+/* -----------------------------------
+  			    Tables
+ ----------------------------------- */
+
+/* -----------------------------------
+  			    Forms
+ ----------------------------------- */
+
+/* -----------------------------------
+               Utilities
+ ----------------------------------- */
+
+/* -----------------------------------
+            Page Components
+ ----------------------------------- */
+
+/* -----------------------------------
+		   Section Overrides
+ ----------------------------------- */
+
+#breadcrumbs {
+    float: left;
+    margin-bottom: 10px;
+}
+
+#breadcrumbs ul {
+	list-style: none;
+    display: inline;
+    margin: 0;
+}
+
+#breadcrumbs li {
+    display: inline;
+}
+
+#breadcrumbs li:not(:first-child) {
+    margin-left: 5px;
+}
+
+#breadcrumbs li:not(:first-child):before {
+    content: '» ';
+}
+
+#blog {
+    float: left;
+    width: 580px;
+    padding: 0 20px 20px 0;
+}
+
+#sidebar {
+    float: right;
+    width: 260px;
+}
+
+#sidebar .widget {
+    width: 240px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #FAFAFA;
+    border: 1px solid #CACACA;
+    -o-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+#sidebar .widget a { border: 0; }
+
+#sidebar .widget hr {
+    margin: 0 0 5px;
+}
+
+ul.tag-list, ul.blog-post-list {
+    margin-left: 0;
+    list-style-type: none;
+}
+
+ul.tag-list li {
+    display: inline;
+}
+
+#post-content {
+    margin: 20px 0;
+}
+
+
+/* -----------------------------------
+  			Third-Party
+ ----------------------------------- */
+
+
+/* -----------------------------------
+            Media Queries
+ ----------------------------------- */

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block layout %}
+    <div id="wrapper">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        <section id="main">
+            {% block main %}{% endblock %}
+        </section> <!-- end of #main -->
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+    </div> <!-- end of #wrapper -->
+{% endblock %}

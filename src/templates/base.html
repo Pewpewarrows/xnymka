@@ -1,0 +1,144 @@
+<!doctype html public "✰">
+
+{% load static %}
+{% load media %}
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]>
+<html lang="en" class="no-js ie ie6">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js ie ie7">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js ie ie8">
+<![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="no-js ie ie9">
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" /> <!-- Needs to be within the first 512 bytes -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+
+    <!-- TODO: ensure this is in server header -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+
+    <title>{% block title %}Christina's Site{% endblock %}</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <!-- Many of this site's static files were inspired by the HTML5 Boilerplate and HTML5 Reset projects -->
+
+    <!--  Mobile Viewport Fix
+        j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+    device-width : Occupy full width of the screen in its current orientation
+    initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+    maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Suppress IE6's pop-up-on-mouseover toolbar for images -->
+    <meta http-equiv="imagetoolbar" content="false" />
+
+    <!-- Be sure to fill this in after registering with Google Webmaster Tools -->
+    <meta name="google-site-verification" content="" />
+
+    {% comment %}
+    <link rel="shortcut icon" href="{% media_url 'images/favicon.ico' %}" />
+    {% endcomment %}
+    <!-- TODO: actually make the touch icon
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}images/touch-icon.png" />
+    -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- TODO: opensearch plugin -->
+    <!-- TODO: IE9 pinned site -->
+    <!-- TODO: facebook opengraph -->
+
+    {% include_media 'main.css' %}
+
+    <!-- Additional stylesheets -->
+    {% block extrastyle %}{% endblock %}
+
+    <!-- Whatever else subpages might want to throw in the <head> -->
+    {% block extrahead %}{% endblock %}
+
+    <!--
+    All scripts at the bottom, except for Modernizr, which enables feature
+    detection as well as basic HTML5 element support in legacy browsers.
+    -->
+    <script src="{% media_url 'modernizr.js' %}"></script>
+</head>
+<!-- http://www.viget.com/inspire/extending-paul-irishs-comprehensive-dom-ready-execution/ -->
+<body id="{% block body-id %}{% endblock %}" data-controller="{% block data-controller %}{% endblock %}" data-action="{% block data-action %}{% endblock %}">
+    {% block overlay %}{% endblock %}
+    {% block layout %}{% endblock %}
+
+    <!--
+        <noscript> tags are handled awkwardly by different browsers, this standardizes it.
+        The entire page is wrapped in a no-js class by default, that is replaced by Modernizr
+        with a js class if javascript can execute. So jsnotice is only visible if it's within no-js.
+    -->
+    <p id="jsnotice">
+        We notice that you currently have Javascript disabled. While this site is fully accessible
+        without it, you're still missing out on some pretty neat features. We work tirelessly
+        to ensure that our scripts are small, unobtrusive, and do not harm your user experience.
+        Please add us to your whitelist, or <a href="//enable-javascript.com/">enable Javascript in your browser</a>!
+    </p>
+
+    <!-- Legacy Browser Upgrade Notification should go here -->
+
+    <!-- Javascript is only allowed past this point -->
+
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript">!window.jQuery && document.write(unescape('%3Cscript src="{% media_url "jquery.js" %}"%3E%3C/script%3E'))</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+
+    <!-- IE6 users with Javascript disabled are < 0.05% of total visitors, they'll just have to deal with it -->
+    <!--[if lt IE 7 ]>
+    <script type="text/javascript"> // Fix any <img> or .png_bg background-images
+        $.getScript('{% media_url "belatedpng.js" %}',function(){ DD_belatedPNG.fix('img, .png_bg'); });
+    </script>
+    <![endif]-->
+
+    {% include_media 'main.js' %}
+    {% comment %}
+    {% if debug %}
+    {% include_media 'main.js' %}
+    {% else %}
+    <script type="text/javascript">
+        // Grab our scripts async
+        var media_urls = {% media_url 'main.js' %};
+        for (url in media_urls) {
+            $.getScript(media_urls[url]);
+        }
+    </script>
+    {% endif %}
+    {% endcomment %}
+
+    <!-- Google Analytics Async Tracker -->
+    <!-- http://mathiasbynens.be/notes/async-analytics-snippet -->
+    <script type="text/javascript">
+        /*
+        var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+        (function(d, t) {
+            var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+            g.async = true;
+            g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s);
+        })(document, 'script');
+        */
+    </script>
+
+    {% block extrascript %}{% endblock %}
+</body>
+</html>
