@@ -5,6 +5,7 @@
 *.db
 
 # Operating System
+.DS_Store
 .DS_Store?
 Icon?
 ._*

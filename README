@@ -1,0 +1,95 @@
+Here lies the personal website and portfolio for my sister, Christina.
+
+It will primarily be an image gallery, with potential social links or
+aggregation, and maybe a small micro-blog for thoughts.
+
+The image gallery is pretty standard, avoiding flash and done entirely in
+javascript. Images will mainly be photographs, but art pieces (scanned or
+photographed themselves) can also be there.
+
+The gallery will be of an abstracted-out "project" concept, where each project
+can be art, a photograph, a song, etc.  Each project will have a thumbnail
+auto-generated based on content.  A larger preview image of the item will be
+available in a lightbox, but will contain a watermark overlaying it. The user
+should only have to upload the original image, and the watermarked preview and
+thumbnail should be auto-generated.
+
+Projects should have a lot of meta-data associated with it.  The user should be
+able to add lots of photography-specific items such as presence of color, type
+of photograph, model of camera used, etc.  Whether these fields can be added on
+the fly by the user or not is questionable. If so, they should be able to group
+fields with default values into templates, and apply them to projects one-by-one
+or in bulk. In addition, there should be a "featured" flag on each project,
+which will signify that it should appear on the front page.
+
+Categories versus tags for taxonomy of projects?
+
+Projects should have e-commerce integration with all major providers.  This will
+allow visitors to actually purchase full-quality and original pieces, There
+should also probably be a Donate link located throughout the site, but call it
+something like "Support this Artist." Projects should have user-editable
+quantity-in-stock, or time-to-make estimates if none are currently available.
+The user should receive e-mail notification upon a purchase or order request, as
+well as be able to easily review order histories along with Excel export
+functionality.
+
+Creating projects and attaching media should be dead simple.  The user should be
+able to either make empty projects as they see fit, or drag-and-drop lots of
+media at once into the system and deal with the project details later on
+a case-by-case basis.
+
+The gallery itself should be a very interactive grid layout.  Thumbnails should
+expand slightly on hover, activate lightboxes on click, and provide quick links
+for the associated project's page.  There should be drill-down filters along the
+side of the page that will allow visitors to quickly browse through massive
+amounts of projects to find just what they're looking for. Lightboxes are
+standard, with title/description and next/previous buttons.  Possibly use
+the grid-flow jquery plugin to animate the grid filtering transitions.
+
+The front page should be a condensed gallery view, without the filters,
+surrounding a center floated site logo. If too few projects are flagged as
+featured, then fill the rest of the grid spaces with the most recent projects.
+
+Micro-blogging and can be handled later. Will mostly be useful for informing
+about upcomming events like showcasings.
+
+Social integration is relatively boilerplate.
+Provide links to user's facebook/twitter/flickr/youtube/etc.
+Add Like/Tweet quick action buttons to the site in general, and individual
+projects.
+
+Would also like to have a sort of blogroll/favorite sites page to provide
+linkbacks.
+
+Mosaic instead of grid of images?
+Navigation down the left-hand side of the page, sideways text?
+Standard breadcrumbs
+
+name? -> Znymka
+
+Homepage
+Gallery (drill-down by filters/categories/tags)
+Blog
+Bio / About Me
+Contact
+Project
+Blogroll/Favorites/Links
+
+Admin
+CMS
+Review Orders
+
+jquery-masonry
+PhotoMosaic
+
+Photostream?
+Significant whitespace, spartan design?
+No lightboxes, better alternative?
+Breadcrumbs vs simple navigation?
+
+Slider example: http://nivo.dev7studios.com/
+Toggle between mosaic / stream prominent on the site
+
+Save context of where you came from when going to a details page for a photo,
+that way you can have contextual prev/next links (but make what you're browsing
+through prominent)
